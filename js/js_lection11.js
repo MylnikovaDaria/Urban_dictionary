@@ -21,7 +21,6 @@ document.getElementById('submit').onclick = () => {
         let mainWord = createH2(mainBlock, "main_h2");
         mainWord.innerHTML = term;
 
-
         // add definitions
 
         let classNameMainOl = "ol_none";
@@ -143,6 +142,6 @@ function customSplit(data) {
 }
 
 function customReplace(string) {
-  let updateString = string.replace(/\[/g, `<a class="link" href="#">`).replace(/\]/g, `</a>`).replace(/\n/g, `<br>`);;
+  let updateString = string.replace(/\[/g, `<a class="link" href="#">`).replace(/\]/g, `</a>`).replace(/\n/g, `<br>`);
   return updateString;
 }
