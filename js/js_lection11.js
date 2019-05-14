@@ -28,7 +28,6 @@ document.getElementById('submit').onclick = () => {
         let definitions = customReplace(x.definition);
         let mainDefinition = customSplit(definitions);
 
-        console.log(x.example);
         if (mainDefinition.length > 1) {
           classNameMainOl = "main_ol";
         }
