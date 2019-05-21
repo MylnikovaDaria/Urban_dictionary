@@ -38,6 +38,7 @@ class StructureConstructor {
   createA(inner) {
     let a = document.createElement("a");
     a.className = this.classNames.a;
+    a.setAttribute("href", "#")
     a.innerHTML = inner;
     return a
   }
@@ -90,7 +91,6 @@ class CardsConstructor extends StructureConstructor {
     ol.className = className;
     return ol;
   }
-
 
   createDefinitions() {
     let classNameDefinitions = "ol_none";
@@ -172,10 +172,18 @@ class HistoryConctructor extends StructureConstructor {
     this.words = words;
   }
 
+  createA(parentTag, inner) {
+    let a = document.createElement("a");
+    a.className = this.classNames.a;
+    a.setAttribute("href", "#");
+    parentTag.appendChild(a);
+    a.innerHTML = inner;
+    return a
+  }
 
   createWords() {
     let mainOl = this.createUl();
-    this.words.forEach(x => this.createLi(mainOl, (`<a class="link_custom">` + x + `</a>`)));
+    this.words.forEach(x => this.createA(this.createLi(mainOl, " "), x))
     return mainOl;
   }
 
@@ -199,7 +207,6 @@ let addWordToHistory = term => {
     localStorage.setItem('history', JSON.stringify(historyWords));
   }
 }
-
 
 // Входные данные
 let main = document.getElementById('main');
@@ -239,6 +246,7 @@ let showWordfromHistory = () => {
   aside.insertAdjacentElement('afterBegin', recentlyViewedWords.outputHistory());
 }
 
+
 // Get запрос
 document.getElementById('submit').onclick = () => {
   term = document.getElementById("search").value;
@@ -252,11 +260,31 @@ document.getElementById('submit').onclick = () => {
         main.appendChild(block.outputDiv());
       })
     })
-    .then(() => document.getElementsByClassName('main_span')[3].innerHTML = 'Top Difinition')
+    .then(() => document.getElementsByClassName('main_span')[3].innerHTML = 'Top Definition')
   let add = new StructureConstructor(classNamesAdd);
   main.appendChild(add.createDiv());
   addWordToHistory(term);
 }
+
+// Get запрос на ссылках
+[...document.querySelectorAll('.link, .link_custom')].forEach(el => el.onclick = () => {
+  term = el.text;
+  console.log(term);
+  main.innerHTML = "";
+  axios.get(`http://api.urbandictionary.com/v0/define?term=${term}`)
+    .then(response => {
+      document.getElementById("section_example").style.display = "none";
+      response.data.list.forEach(item => {
+
+        let block = new CardsConstructor(classNames, response.data.list.indexOf(item), term, item.definition, item.example, item.author, item.thumbs_up, item.thumbs_down, item.written_on);
+        main.appendChild(block.outputDiv());
+      })
+    })
+    .then(() => document.getElementsByClassName('main_span')[1].innerHTML = 'Top Definition')
+  let add = new StructureConstructor(classNamesAdd);
+  main.appendChild(add.createDiv());
+  addWordToHistory(term);
+});
 
 // Отображение данных из localStorage на странице
 showWordfromHistory();
