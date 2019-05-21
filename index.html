@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Playfair+Display:400,700|Work+Sans|Lato:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Playfair+Display:400,700|Work+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Space+Mono:400,700" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  <title>Urban Dictionary</title>
+  <title>Document</title>
 </head>
+
 <body>
   <header class="header">
     <div class="container">
@@ -22,59 +25,62 @@
         </ul>
       </div>
       <div class="header_search">
-        <input class="header_search_bar" type="text" id="search" name="search" autocomplete="off" value="" placeholder="Please, type your word">
+        <input class="header_search_bar" type="text" id="search" name="search" autocomplete="on" value="" placeholder="Please, type your word">
         <input class="header_search_button" type="submit" id="submit" name="submit" value="Search">
       </div>
     </div>
   </header>
   <!--end header -->
+
   <div class="top_container">
     <section class="section_example" id="section_example">
       <div class="container">
-        <div class="section_block">
-          <span class="main_span">Top Definition</span>
-          <h2 class="main_h2">milk in first</h2>
-          <ol class="ol_none">
-            <li class="main_li"><a class="link" href="#">Pouring</a> milk in your cup before the coffee. Similar to "<a class="link" href="#">pouring the milk first</a>" when preparing <a class="link" href="#">cereal</a>.
-          </ol>
-          <ol class="ol_none">
-            <li class="main_li_example"> He's <a class="link" href="#">a milk</a> in first sort of person -- I wouldn't <a class="link" href="#">trust</a> him.
-          </ol>
-          <p class="main_p">by <a class="main_a">Absquatch</a> September 14, 2015</p>
-          <a class="main_a_like">2826 <i class="fas fa-thumbs-up"></i></a><a class="main_a_like">1410 <i class="fas fa-thumbs-down"></i></a>
+        <div class="section_example_main">
+          <div class="section_block">
+            <span class="main_span">Top Definition</span>
+            <h2 class="main_h2">milk in first</h2>
+            <ol class="ol_none">
+              <li class="main_li"><a class="link" href="">Pouring</a> milk in your cup before the coffee. Similar to "<a class="link" href="">pouring the milk first</a>" when preparing <a class="link" href="#">cereal</a>.
+            </ol>
+            <ol class="ol_none">
+              <li class="main_li_example"> He's <a class="link" href="">a milk</a> in first sort of person -- I wouldn't <a class="link" href="">trust</a> him.
+            </ol>
+            <p class="main_p">by <a class="main_a">Absquatch</a> September 14, 2015</p>
+            <a class="main_a_like">2826 <i class="fas fa-thumbs-up"></i></a><a class="main_a_like">1410 <i class="fas fa-thumbs-down"></i></a>
+          </div>
+          <div class="section_block">
+            <span class="main_span">Trends</span>
+            <ol class="main_ol_custom">
+              <li class="main_li_custom"><a class="link_custom" href="">ghost shit</a>.</li>
+              <li class="main_li_custom"><a class="link_custom" href="">MAMIL</a>.</li>
+              <li class="main_li_custom"><a class="link_custom" href="">Slag</a>.</li>
+              <li class="main_li_custom"><a class="link_custom" href="">Battery Operated Boyfriend</a>.</li>
+              <li class="main_li_custom"><a class="link_custom" href="">beshie</a>.</li>
+              <li class="main_li_custom"><a class="link_custom" href="">pokemans</a>.</li>
+              <li class="main_li_custom"><a class="link_custom" href="">savage</a>.</li>
+              <li class="main_li_custom"><a class="link_custom" href="">Yass</a>.</li>
+              <li class="main_li_custom"><a class="link_custom" href="">salt and sauce</a>.</li>
+              <li class="main_li_custom"><a class="link_custom" href="">Brodie</a>.</li>
+            </ol>
+          </div>
         </div>
-
-        <div class="section_block_ad">
-          <div class="section_block_ad_item">
+        <div class="section_example_ad" id="aside">
+          <div class="section_example_ad_item" id="aside_first">
             <img class="promo section_block_ad_img" src="images/promo.jpg" alt="">
             <a class="link_add" href=""><i class="fas fa-plus"></i> Define a Word</a>
+
           </div>
-          <div class="section_block_ad_item">
+          <div class="section_example_ad_item" id="cup">
             <img class="section_block_ad_img" src="images/cup.png" alt="">
-            <a class="link" href="">Add to cart <i class="fas fa-shopping-cart"></i></a>
+            <a class="link_add" href="">Add to cart <i class="fas fa-shopping-cart"></i></a>
           </div>
         </div>
 
-        <div class="section_block">
-          <h3>Trends</h3>
-          <ol class="main_ol_custom">
-            <li class="main_li_custom"><a class="link_custom" href="#">ghost shit</a>.</li>
-            <li class="main_li_custom"><a class="link_custom" href="#">MAMIL</a>.</li>
-            <li class="main_li_custom"><a class="link_custom" href="#">Slag</a>.</li>
-            <li class="main_li_custom"><a class="link_custom" href="#">Battery Operated Boyfriend</a>.</li>
-            <li class="main_li_custom"><a class="link_custom" href="#">beshie</a>.</li>
-            <li class="main_li_custom"><a class="link_custom" href="#">pokemans</a>.</li>
-            <li class="main_li_custom"><a class="link_custom" href="#">savage</a>.</li>
-            <li class="main_li_custom"><a class="link_custom" href="#">Yass</a>.</li>
-            <li class="main_li_custom"><a class="link_custom" href="#">salt and sauce</a>.</li>
-            <li class="main_li_custom"><a class="link_custom" href="#">Brodie</a>.</li>
-          </ol>
-        </div>
+
       </div>
       <!--end section container -->
     </section>
     <!--end section example -->
-
     <main class="main">
       <div class="container" id="main">
 
@@ -84,7 +90,6 @@
     <!--end main -->
   </div>
   <!--end top container -->
-
   <footer class="footer">
     <div class="container">
       <h3 class="footer__title">Follow us</h3>
@@ -107,7 +112,9 @@
     <!--end footer container-->
   </footer>
   <!--end footer-->
+  </header>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
   <script type="text/javascript" src="js/js_lection11.js"></script>
 </body>
+
 </html>
